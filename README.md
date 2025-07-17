@@ -1,6 +1,17 @@
-This repository is not a full project. It's a sample of the way I do code. There are two main folders in this repository: 
+## 🚀 **Welcome to My Code Sample Repository**
 
-1. Laravel: This folder you can exlpore my laravel code
-2. Vuejs: This folder you can explore my vuejs 3 code
+> ⚠️ **Note:** This repository is not a full project.  
+> It’s a sample showcasing the way I write and organize code.
 
-Thank you for visiting me :) 
+### 📁 **Folder Structure**
+
+- **🟫 Laravel**  
+  Explore my backend code written in **Laravel**, demonstrating clean structure and best practices.
+
+- **🟩 Vue.js 3**  
+  Dive into my **Vue 3** frontend code, written using the `script setup` syntax with clear component structure.
+
+---
+
+🙏 **Thank you for visiting!**  
+Feel free to explore, clone, or get in touch if you have any feedback or questions.
