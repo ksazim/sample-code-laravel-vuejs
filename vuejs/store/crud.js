@@ -16,47 +16,16 @@ export const useCrudStore = defineStore({
         allLoaded: false
     }),
     actions: {
-        async getAllInfinite(api, queryParams = {}) {
-            if (this.loading || this.allLoaded) return;
-            console.log(queryParams);
-            this.loading = true;
-        
-            const token = localStorage.getItem('token');
-        
-            try {
-                let url = new URL(this.nextPage ?? process.env.VUE_APP_BASE_API_URL + api);
-                
-                Object.keys(queryParams).forEach(key => {
-                    url.searchParams.append(key, queryParams[key]);
-                });
-        
-                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        
-                const response = await axios.get(url.toString()); 
-        
-                this.getAllData.push(...response.data.list);
-                this.nextPage = response.data.next_page_url;
-                if (!response.data.next_page_url) this.allLoaded = true;
-            } catch (e) {
-                return e;
-            } finally {
-                this.loading = false;
-            }
-        },
-        
-
         async getAll(api) {
             const token = localStorage.getItem('token');
             try {
-                // const url = this.nextPage ?? process.env.VUE_APP_BASE_API_URL + api;
-
                 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
                 const response = await axios.get(process.env.VUE_APP_BASE_API_URL + api)
                 this.getAllData = response.data.list
             } catch(e) {
                 return e
             } finally {
-                // this.loading = false;  // Stop loading once data is fetched
+                
             }
         },
         
